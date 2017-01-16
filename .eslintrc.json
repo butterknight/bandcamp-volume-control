@@ -1,0 +1,32 @@
+{
+    "env": {
+        "browser": true,
+        "node": true,
+        "es6": false
+    },
+    "extends": "eslint:recommended",
+    "globals": {
+        "window": true,
+        "document": true,
+        "chrome": true,
+        "require": true
+    },
+    "rules": {
+        "indent": [
+            "error",
+            4,
+            {
+                "SwitchCase": 1
+            }
+        ],
+        "linebreak-style": [
+            "error",
+            "unix"
+        ],
+        "semi": [
+            "error",
+            "always"
+        ],
+        "no-console": "off"
+    }
+}
