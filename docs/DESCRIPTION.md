@@ -12,7 +12,11 @@ The slider takes some of the styles from Bandcamp's own player to fit the visual
 
 The volume is saved every time it's changed and the value should persist across multiple players. So if you save a volume at 42% on one page and open up another one (it doesn't matter if it's embedded or not), the volume should default to 42% in that one, too. This eliminates the need to constantly reset it if you're browsing multiple pages quickly. Note that if there are multiple embedded players in the same page, changing volume of one will **not** affect any other. Also, only the last value changed (regardless of the player) will be saved.
 
-Note that on Bandcamp's Discover page one slider controls **all** audio players until I figure out which is which.
+## Important notices
+
+- Currently on Bandcamp's Discover page one slider controls **all** found audio player page elements until I figure out which is which. I don't use that page enough to actually know the consequences of that yet
+- There is an issue with artwork-only player where the volume slider interferes with the playlist that shows up on hover; I'll see about getting that fixed as soon as I can
+- Those very tiny players aren't currently supported at all
 
 ## Permissions
 
