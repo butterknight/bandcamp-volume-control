@@ -1,45 +1,30 @@
 {
   "name": "bandcamp-volume-control",
-  "version": "0.2.2",
+  "version": "1.0.0",
   "description": "It's a volume control for Bandcamp audio player. The extension adds another slider (somewhere around the one that controls the track progress) to control the volume.",
-  "main": "src/index.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"No tests made yet. YOLO!\" && exit 1",
-    "build-prod": "NODE_ENV=prod gulp build",
-    "build-dev": "NODE_ENV=dev gulp build",
-    "publish": "NODE_ENV=prod gulp publish",
-    "watch": "NODE_ENV=dev gulp watch",
-    "dev": "NODE_ENV=dev gulp build watch"
+    "build": "esbuild src/index.ts --bundle --sourcemap --target=es2015 --outfile=dist/content.js",
+    "postbuild": "cp -a meta/* dist",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@gitlab.com/markoooo/bandcamp-volume-control.git"
+    "url": "git+https://github.com/butterknight/bandcamp-volume-control.git"
   },
   "keywords": [
     "bandcamp",
-    "audio",
     "volume",
-    "extension",
-    "webextension",
-    "browser"
+    "control"
   ],
-  "author": "butterknight",
+  "author": "marko.a3@gmail.com",
   "license": "Apache-2.0",
   "bugs": {
-    "url": "https://gitlab.com/markoooo/bandcamp-volume-control/issues"
+    "url": "https://github.com/butterknight/bandcamp-volume-control/issues"
   },
-  "homepage": "https://gitlab.com/markoooo/bandcamp-volume-control#README",
+  "homepage": "https://github.com/butterknight/bandcamp-volume-control#readme",
   "devDependencies": {
-    "del": "^2.2.2",
-    "gulp": "^3.9.1",
-    "gulp-bump": "^2.5.1",
-    "gulp-concat": "^2.6.1",
-    "gulp-footer": "^1.0.5",
-    "gulp-header": "^1.8.8",
-    "gulp-if": "^2.0.2",
-    "gulp-strip-debug": "^1.1.0",
-    "gulp-uglify": "^2.0.0",
-    "gulp-util": "^3.0.8",
-    "run-sequence": "^1.2.2"
+    "@types/chrome": "^0.0.200",
+    "esbuild": "^0.15.11"
   }
 }
