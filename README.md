@@ -32,7 +32,7 @@ The extension only requires `storage` permissions (so it can save the volume lev
 Aside from the Bandcamp domain, a number of additional custom domains is supported as well:
 
 - https://music.monstercat.com/*
-- https://shop.attackthemusic.com/*"
+- https://shop.attackthemusic.com/*
 - https://listen.20buckspin.com/*
 
 You can use [this form](https://github.com/butterknight/bandcamp-volume-control/issues/new?assignees=butterknight&labels=custom-domain-request&template=custom_domain_request.yml&title=%5BCustomDomain%5D%3A+) if you wish to suggest new ones to be added.
