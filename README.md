@@ -12,20 +12,30 @@ The slider takes some of the styles from Bandcamp's own player to fit the visual
 
 The volume is saved every time it's changed and the value should persist across multiple players. So if you save a volume at 42% on one page and open up another one (it doesn't matter if it's embedded or not), the volume should default to 42% in that one, too. This eliminates the need to constantly reset it if you're browsing multiple pages quickly. Note that if there are multiple embedded players in the same page, changing volume of one will **not** instantly affect any other. Also, only the last value changed (regardless of the player) will be saved.
 
+## Supported pages
+
+This extension should work on Bandcamp pages and any other page that normally embeds the Bandcamp player. There are, however, some pages that seem to embed the player directly, and the extension does not work on those by default. The reason for that is increased security, as no one wants this extension to run on _any_ page you visit, so it's usage is restricted by URL (web page address). 
+
+In order to make this work on custom Bandcamp domains, they need to be manually added to permitted URLs. The extension already comes with a few supported domains by default, and if you know of another that you'd like to see supported, open a request and I'll add it as soon as possible.
+
 ## Important notices
 
 - Currently on Bandcamp's Discover page one slider controls **all** found audio player page elements until I figure out which is which. I don't use that page enough to actually know the consequences of that yet
-- There is an issue with artwork-only player where the volume slider interferes with the playlist that shows up on hover; I'll see about getting that fixed as soon as I can
 - Those very tiny players aren't currently supported at all
-
 
 ## Permissions
 
 The extension only requires `storage` permissions (so it can save the volume level), and access to the content of any Bandcamp (`https://*.bandcamp.com/`) page (so it can find the player, markup, etc.).
 
+Aside from the Bandcamp domain, a number of additional custom domains is supported as well:
+
+- https://music.monstercat.com/*
+- https://shop.attackthemusic.com/*"
+- https://listen.20buckspin.com/*
+
 ## License
 
-Copyright 2017
+Copyright 2017, 2023
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.
