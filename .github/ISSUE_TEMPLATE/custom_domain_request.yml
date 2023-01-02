@@ -1,0 +1,15 @@
+name: Custom domain request
+description: File a request for adding support for a custom Bandcamp domain
+title: '[CustomDomain]: '
+labels: ['custom-domain-request']
+assignees:
+  - butterknight
+body:
+  - type: textarea
+    id: custom-domain
+    attributes:
+      label: Which domains would you like to add?
+      description: Please write down the domain(s) you'd like to see supported.
+      placeholder: https://music.myawesomedomain.com
+    validations:
+      required: true
