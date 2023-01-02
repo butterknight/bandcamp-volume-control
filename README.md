@@ -18,6 +18,8 @@ This extension should work on Bandcamp pages and any other page that normally em
 
 In order to make this work on custom Bandcamp domains, they need to be manually added to permitted URLs. The extension already comes with a few supported domains by default, and if you know of another that you'd like to see supported, open a request and I'll add it as soon as possible.
 
+If you wish to suggest a domain for support, you can use [this form](https://github.com/butterknight/bandcamp-volume-control/issues/new?assignees=butterknight&labels=custom-domain-request&template=custom_domain_request.yml&title=%5BCustomDomain%5D%3A+)
+
 ## Important notices
 
 - Currently on Bandcamp's Discover page one slider controls **all** found audio player page elements until I figure out which is which. I don't use that page enough to actually know the consequences of that yet
@@ -32,6 +34,8 @@ Aside from the Bandcamp domain, a number of additional custom domains is support
 - https://music.monstercat.com/*
 - https://shop.attackthemusic.com/*"
 - https://listen.20buckspin.com/*
+
+You can use [this form](https://github.com/butterknight/bandcamp-volume-control/issues/new?assignees=butterknight&labels=custom-domain-request&template=custom_domain_request.yml&title=%5BCustomDomain%5D%3A+) if you wish to suggest new ones to be added.
 
 ## License
 
