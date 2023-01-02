@@ -67,7 +67,7 @@ export abstract class AbstractMarkupControl {
 
   private checkForErrors(): void {
     if (this.domService.hasErrors()) {
-      console.error('Player has errors. Quitting');
+      console.log('Player has errors. Quitting');
     }
   }
 

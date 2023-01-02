@@ -4,7 +4,7 @@ import { IBandcampStyles } from '../interfaces/styles.interface';
 
 export class MarkupControlLarge extends AbstractMarkupControl {
   protected captureBandcampElements(): IBandcampElements {
-    const bcContainer: HTMLDivElement = this.domService.captureElement('#artarea')!;
+    const bcContainer: HTMLDivElement = this.domService.captureElement('#player')!;
     return {
       bcContainer,
       bcWrapper: bcContainer,
@@ -27,6 +27,9 @@ export class MarkupControlLarge extends AbstractMarkupControl {
   }
 
   protected generateMarkup<HTMLDivElement extends HTMLElement>(): HTMLDivElement {
+    const artArea: HTMLDivElement = this.domService.captureElement('#artarea')!;
+    const artAreaHeight: number = artArea.clientHeight;
+
     const wrapper: HTMLDivElement = this.domService
       .manipulate<HTMLDivElement>(this.domService.createDiv() as any)
       .setId('bk_wrapper')
@@ -35,8 +38,8 @@ export class MarkupControlLarge extends AbstractMarkupControl {
         position: 'absolute',
         width: '100%',
         padding: '6px',
-        bottom: '6px',
-        zIndex: '1000',
+        top: `${artAreaHeight - 26}px`,
+        zIndex: '10',
       }).el!;
 
     const progressBar: HTMLDivElement = this.domService
@@ -100,8 +103,5 @@ export class MarkupControlLarge extends AbstractMarkupControl {
     this.domService
       .manipulate(this.domService.captureElement<HTMLDivElement>('#artarea .logo') as HTMLDivElement)
       .setStyles({ bottom: '10%' });
-    // this.domService
-    //   .manipulate(this.domService.captureElement<HTMLDivElement>('#nonartarea') as HTMLDivElement)
-    //   .setStyles({ position: 'relative' });
   }
 }

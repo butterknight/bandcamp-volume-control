@@ -17,7 +17,7 @@ export function markupFactory(type: PlayerType): AbstractMarkupControl | undefin
     case PlayerType.Discover:
       return new MarkupControlDiscover(domService, eventService);
     default:
-      console.error('Sorry, but this type of a player is not supported.');
+      console.log('Sorry, but this type of a player is not supported.');
       return undefined;
   }
 }

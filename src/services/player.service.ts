@@ -24,7 +24,7 @@ export class PlayerService {
     const players: Array<HTMLAudioElement> | null = this.domService.captureElements<HTMLAudioElement>('audio');
 
     if (!players?.length) {
-      console.error('I could not find a Bandcamp Player on the page 🥺');
+      console.log('I could not find a Bandcamp Player on the page 🥺');
     }
 
     return players;
@@ -41,7 +41,7 @@ export class PlayerService {
         type = PlayerType.Small;
       } else {
         type = PlayerType.Unsupported;
-        console.error("Sorry, but this player type isn't currently supported.");
+        console.log("Sorry, but this player type isn't currently supported.");
       }
     } else {
       if (this.isDiscoverPlayer()) {
@@ -50,7 +50,7 @@ export class PlayerService {
         type = PlayerType.Page;
       } else {
         type = PlayerType.Unsupported;
-        console.error("Sorry, but this player type isn't currently supported.");
+        console.log("Sorry, but this player type isn't currently supported.");
       }
     }
 

@@ -36,13 +36,18 @@ export class MarkupControlSmall extends AbstractMarkupControl {
         width: '100%',
         padding: '6px 12px 6px 67px',
         bottom: '3%',
-        zIndex: '1000',
+        zIndex: '10',
       }).el!;
 
     const progressBarWrapper: HTMLDivElement = this.domService
       .manipulate<HTMLDivElement>(this.domService.createDiv() as any)
       .setClass('bk_progress_bar_wrapper')
-      .setStyles({ position: 'relative', width: '100%', margin: '0', padding: '0' }).el!;
+      .setStyles({
+        position: 'relative',
+        width: '100%',
+        margin: '0',
+        padding: '0',
+      }).el!;
 
     const progressBar: HTMLDivElement = this.domService
       .manipulate<HTMLDivElement>(this.domService.createDiv() as any)

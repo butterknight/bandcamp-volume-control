@@ -162,7 +162,7 @@
     getPlayers() {
       const players = this.domService.captureElements("audio");
       if (!(players == null ? void 0 : players.length)) {
-        console.error("I could not find a Bandcamp Player on the page \u{1F97A}");
+        console.log("I could not find a Bandcamp Player on the page \u{1F97A}");
       }
       return players;
     }
@@ -176,7 +176,7 @@
           type = "small" /* Small */;
         } else {
           type = "unsupported" /* Unsupported */;
-          console.error("Sorry, but this player type isn't currently supported.");
+          console.log("Sorry, but this player type isn't currently supported.");
         }
       } else {
         if (this.isDiscoverPlayer()) {
@@ -185,7 +185,7 @@
           type = "page" /* Page */;
         } else {
           type = "unsupported" /* Unsupported */;
-          console.error("Sorry, but this player type isn't currently supported.");
+          console.log("Sorry, but this player type isn't currently supported.");
         }
       }
       return type;
@@ -287,7 +287,7 @@
     }
     checkForErrors() {
       if (this.domService.hasErrors()) {
-        console.error("Player has errors. Quitting");
+        console.log("Player has errors. Quitting");
       }
     }
     attachEvents() {
@@ -386,9 +386,14 @@
         position: "relative",
         width: "auto",
         padding: "4px 10px",
-        zIndex: "1000"
+        zIndex: "10"
       }).el;
-      const progressBarWrapper = this.domService.createAndManipulate("div").setClass("bk_progress_bar_wrapper").setStyles({ position: "relative", width: "100%", margin: "0", padding: "0" }).el;
+      const progressBarWrapper = this.domService.createAndManipulate("div").setClass("bk_progress_bar_wrapper").setStyles({
+        position: "relative",
+        width: "100%",
+        margin: "0",
+        padding: "0"
+      }).el;
       const progressBar = this.domService.createAndManipulate("div").setClass("bk_progress_bar").setStyles({ width: "72%" }).el;
       const progressBarBackground = this.domService.createAndManipulate("div").setId("bk_progress_bg").setClass("bk_progress_bar_background").setStyles({
         position: "relative",
@@ -434,7 +439,7 @@
   // src/markup/markups/markup-control-large.ts
   var MarkupControlLarge = class extends AbstractMarkupControl {
     captureBandcampElements() {
-      const bcContainer = this.domService.captureElement("#artarea");
+      const bcContainer = this.domService.captureElement("#player");
       return {
         bcContainer,
         bcWrapper: bcContainer
@@ -454,12 +459,14 @@
       };
     }
     generateMarkup() {
+      const artArea = this.domService.captureElement("#artarea");
+      const artAreaHeight = artArea.clientHeight;
       const wrapper = this.domService.manipulate(this.domService.createDiv()).setId("bk_wrapper").setClass(["bk_wrapper", "bk_large"]).setStyles({
         position: "absolute",
         width: "100%",
         padding: "6px",
-        bottom: "6px",
-        zIndex: "1000"
+        top: `${artAreaHeight - 26}px`,
+        zIndex: "10"
       }).el;
       const progressBar = this.domService.manipulate(this.domService.createDiv()).setClass("bk_progress_bar").setStyles({ width: "78%" }).el;
       const progressBarBackground = this.domService.manipulate(this.domService.createDiv()).setId("bk_progress_bg").setClass("bk_progress_bar_background").setStyles({
@@ -528,7 +535,7 @@
         width: "100%",
         padding: "6px",
         bottom: "-24px",
-        zIndex: "1000"
+        zIndex: "10"
       }).el;
       const progressBar = this.domService.manipulate(this.domService.createDiv()).setClass("bk_progress_bar").setStyles({ width: "78%" }).el;
       const progressBarBackground = this.domService.manipulate(this.domService.createDiv()).setId("bk_progress_bg").setClass("bk_progress_bar_background").setStyles({
@@ -596,9 +603,14 @@
         width: "100%",
         padding: "6px 12px 6px 67px",
         bottom: "3%",
-        zIndex: "1000"
+        zIndex: "10"
       }).el;
-      const progressBarWrapper = this.domService.manipulate(this.domService.createDiv()).setClass("bk_progress_bar_wrapper").setStyles({ position: "relative", width: "100%", margin: "0", padding: "0" }).el;
+      const progressBarWrapper = this.domService.manipulate(this.domService.createDiv()).setClass("bk_progress_bar_wrapper").setStyles({
+        position: "relative",
+        width: "100%",
+        margin: "0",
+        padding: "0"
+      }).el;
       const progressBar = this.domService.manipulate(this.domService.createDiv()).setClass("bk_progress_bar").setStyles({ width: "72%" }).el;
       const progressBarBackground = this.domService.manipulate(this.domService.createDiv()).setId("bk_progress_bg").setClass("bk_progress_bar_background").setStyles({
         position: "relative",
@@ -654,7 +666,7 @@
       case "discover" /* Discover */:
         return new MarkupControlDiscover(domService, eventService);
       default:
-        console.error("Sorry, but this type of a player is not supported.");
+        console.log("Sorry, but this type of a player is not supported.");
         return void 0;
     }
   }

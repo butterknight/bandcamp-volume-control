@@ -36,7 +36,7 @@ export class MarkupControlPage extends AbstractMarkupControl {
         width: '100%',
         padding: '6px',
         bottom: '-24px',
-        zIndex: '1000',
+        zIndex: '10',
       }).el!;
 
     const progressBar: HTMLDivElement = this.domService
