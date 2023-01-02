@@ -2,9 +2,10 @@
   "name": "bandcamp-volume-control",
   "version": "1.0.0",
   "description": "It's a volume control for Bandcamp audio player. The extension adds another slider (somewhere around the one that controls the track progress) to control the volume.",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --sourcemap --target=es2015 --outfile=dist/content.js",
+    "package": "rm -rf dist && npm run build && cd dist && web-ext build",
     "postbuild": "cp -a meta/* dist",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

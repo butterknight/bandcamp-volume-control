@@ -37,6 +37,14 @@ Aside from the Bandcamp domain, a number of additional custom domains is support
 
 You can use [this form](https://github.com/butterknight/bandcamp-volume-control/issues/new?assignees=butterknight&labels=custom-domain-request&template=custom_domain_request.yml&title=%5BCustomDomain%5D%3A+) if you wish to suggest new ones to be added.
 
+## Development
+
+You will need to have `node.js` installed.
+
+Install the dependencies by running `npm ci`.
+
+Build the compiled file by running `npm run build`. The compiled code will be created in the `dist` folder.
+
 ## License
 
 Copyright 2017, 2023
