@@ -27,11 +27,15 @@ In order to make this work on custom Bandcamp domains, they need to be manually 
 
 The extension only requires `storage` permissions (so it can save the volume level), and access to the content of any Bandcamp (`https://*.bandcamp.com/`) page (so it can find the player, markup, etc.).
 
-Aside from the Bandcamp domain, a number of additional custom domains is supported as well.
+Aside from the Bandcamp domain, a number of additional custom domains is supported as well:
+
+- https://music.monstercat.com/*
+- https://shop.attackthemusic.com/*"
+- https://listen.20buckspin.com/*
 
 ## License
 
-Copyright 2022
+Copyright 2017, 2023
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

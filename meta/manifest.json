@@ -8,7 +8,12 @@
     },
     "content_scripts": [
 		{
-			"matches": ["https://*.bandcamp.com/*", "http://*.bandcamp.com/*"],
+			"matches": [
+                "https://*.bandcamp.com/*", 
+                "https://music.monstercat.com/*", 
+                "https://shop.attackthemusic.com/*", 
+                "https://listen.20buckspin.com/*"
+            ],
 			"js": ["content.js"],
             "all_frames": true
 		}
