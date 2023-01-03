@@ -238,7 +238,7 @@
 
   // src/services/injector.ts
   var eventService = new EventService();
-  var storageService = new StorageService(window.chrome.storage.local);
+  var storageService = new StorageService(chrome.storage.local);
   var domService = new DomService(document, window);
   var playerService = new PlayerService(domService);
 

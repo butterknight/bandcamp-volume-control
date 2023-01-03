@@ -37,6 +37,20 @@ Aside from the Bandcamp domain, a number of additional custom domains is support
 
 You can use [this form](https://github.com/butterknight/bandcamp-volume-control/issues/new?assignees=butterknight&labels=custom-domain-request&template=custom_domain_request.yml&title=%5BCustomDomain%5D%3A+) if you wish to suggest new ones to be added.
 
+## Changelog
+
+#### v1.0.1 _(Jan 3, 2023)_
+
+- fix an utterly dreadful issue where the extension wouldn't load
+
+#### v1.0.0 _(Jan 2, 2023)_
+
+- complete rewrite of the extension (so it's easier to maintain)
+
+#### v2.3.0 _(Feb 10, 2017)_
+
+- initial version of the extension
+
 ## Development
 
 You will need to have `node.js` installed.
