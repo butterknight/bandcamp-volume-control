@@ -39,6 +39,10 @@ You can use [this form](https://github.com/butterknight/bandcamp-volume-control/
 
 ## Changelog
 
+#### v1.0.2 _(Jan 5, 2023)_
+
+- fix a colour styling issue [#4](https://github.com/butterknight/bandcamp-volume-control/issues/4)
+
 #### v1.0.1 _(Jan 3, 2023)_
 
 - fix an utterly dreadful issue where the extension wouldn't load

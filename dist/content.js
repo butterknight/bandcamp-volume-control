@@ -374,9 +374,13 @@
         this.domService.captureElement(".inline_player .thumb")
       );
       return {
+        colour: "#f0f0f0",
+        handleBackgroundColor: handleElementStyles.backgroundColor,
+        handleBorder: "1px solid " + handleElementStyles.borderColor,
         progBarBackgroundColor: backgroundElementStyles.backgroundColor,
-        border: handleElementStyles.borderTopWidth + " solid " + handleElementStyles.borderTopColor,
-        handleBackgroundColor: handleElementStyles.backgroundColor
+        progBarBorder: handleElementStyles.borderTopWidth + " solid " + handleElementStyles.borderTopColor,
+        volumeBackgroundColor: "rgba(12, 12, 12, 0.72)",
+        volumeBorder: "1px solid rgba(12, 12, 12, 0.3)"
       };
     }
     generateMarkup() {
@@ -399,25 +403,26 @@
         position: "relative",
         height: "6px",
         backgroundColor: this.styles.progBarBackgroundColor,
-        border: this.styles.border
+        border: this.styles.progBarBorder
       }).el;
       const handle = this.domService.createAndManipulate("div").setId("bk_handle").setClass("bk_handle").setStyles({
         position: "relative",
-        height: "12px",
-        width: "24px",
-        top: "-4px",
-        borderRadius: "12px",
+        height: "8px",
+        width: "20px",
+        top: "-2px",
+        borderRadius: "1px",
         cursor: "pointer",
         backgroundColor: this.styles.handleBackgroundColor,
-        border: this.styles.border
+        border: this.styles.handleBorder
       }).el;
       const volumeValue = this.domService.createAndManipulate("span").setId("bk_volume").setClass("bk_volume_value").setStyles({
         position: "absolute",
         right: "8px",
         borderRadius: "2px",
-        background: "rgba(12, 12, 12, 0.72)",
-        color: "#f0f0f0",
-        padding: "2px 4px",
+        background: this.styles.volumeBackgroundColor,
+        border: this.styles.volumeBorder,
+        color: this.styles.colour,
+        padding: "1px 4px",
         fontSize: "10px",
         bottom: "0"
       }).el;
@@ -453,9 +458,13 @@
         this.domService.captureElement("#progbar_thumb")
       );
       return {
+        colour: "#f0f0f0",
+        handleBackgroundColor: handleElementStyles.backgroundColor,
+        handleBorder: "1px solid " + handleElementStyles.borderColor,
         progBarBackgroundColor: backgroundElementStyles.backgroundColor,
-        border: handleElementStyles.borderTopWidth + " solid " + handleElementStyles.borderTopColor,
-        handleBackgroundColor: handleElementStyles.backgroundColor
+        progBarBorder: "1px solid " + backgroundElementStyles.borderColor,
+        volumeBackgroundColor: "rgba(12, 12, 12, 0.72)",
+        volumeBorder: "1px solid rgba(12, 12, 12, 0.3)"
       };
     }
     generateMarkup() {
@@ -465,35 +474,36 @@
         position: "absolute",
         width: "100%",
         padding: "6px",
-        top: `${artAreaHeight - 26}px`,
+        top: `${artAreaHeight - 28}px`,
         zIndex: "10"
       }).el;
       const progressBar = this.domService.manipulate(this.domService.createDiv()).setClass("bk_progress_bar").setStyles({ width: "78%" }).el;
       const progressBarBackground = this.domService.manipulate(this.domService.createDiv()).setId("bk_progress_bg").setClass("bk_progress_bar_background").setStyles({
         position: "relative",
-        height: "6px",
+        height: "8px",
         backgroundColor: this.styles.progBarBackgroundColor,
-        border: this.styles.border
+        border: this.styles.progBarBorder
       }).el;
       const handle = this.domService.manipulate(this.domService.createDiv()).setId("bk_handle").setClass("bk_handle").setStyles({
         position: "relative",
-        height: "12px",
+        height: "10px",
         width: "24px",
-        top: "-4px",
-        borderRadius: "12px",
+        top: "-2px",
+        borderRadius: "1px",
         cursor: "pointer",
         backgroundColor: this.styles.handleBackgroundColor,
-        border: this.styles.border
+        border: this.styles.handleBorder
       }).el;
       const volumeValue = this.domService.manipulate(this.domService.createSpan()).setId("bk_volume").setClass("bk_volume_value").setStyles({
         position: "absolute",
         right: "8px",
+        bottom: "0",
+        background: this.styles.volumeBackgroundColor,
+        border: this.styles.volumeBorder,
         borderRadius: "2px",
-        background: "rgba(12, 12, 12, 0.72)",
-        color: "#f0f0f0",
-        padding: "2px 4px",
+        color: this.styles.colour,
         fontSize: "10px",
-        bottom: "0"
+        padding: "1px 4px"
       }).el;
       this.domService.addElement(handle, progressBarBackground);
       this.domService.addElement(progressBarBackground, progressBar);
@@ -518,15 +528,22 @@
     }
     captureBandcampStyles() {
       const backgroundElementStyles = this.domService.getStyles(
-        this.domService.captureElement("#pgBd")
+        this.domService.captureElement(".inline_player .progbar_empty")
       );
       const handleElementStyles = this.domService.getStyles(
         this.domService.captureElement(".inline_player .thumb")
       );
+      const textStyles = this.domService.getStyles(
+        this.domService.captureElement(".inline_player .title")
+      );
       return {
+        colour: textStyles.color,
+        handleBackgroundColor: handleElementStyles.backgroundColor,
+        handleBorder: "1px solid " + handleElementStyles.borderTopColor,
         progBarBackgroundColor: backgroundElementStyles.backgroundColor,
-        border: handleElementStyles.borderTopWidth + " solid " + handleElementStyles.borderTopColor,
-        handleBackgroundColor: handleElementStyles.backgroundColor
+        progBarBorder: "1px solid " + backgroundElementStyles.borderTopColor,
+        volumeBackgroundColor: backgroundElementStyles.backgroundColor,
+        volumeBorder: "1px solid " + handleElementStyles.borderTopColor
       };
     }
     generateMarkup() {
@@ -542,25 +559,26 @@
         position: "relative",
         height: "6px",
         backgroundColor: this.styles.progBarBackgroundColor,
-        border: this.styles.border
+        border: this.styles.progBarBorder
       }).el;
       const handle = this.domService.manipulate(this.domService.createDiv()).setId("bk_handle").setClass("bk_handle").setStyles({
         position: "relative",
-        height: "12px",
-        width: "24px",
-        top: "-4px",
-        borderRadius: "12px",
+        height: "8px",
+        width: "18px",
+        top: "-2px",
+        borderRadius: "1px",
         cursor: "pointer",
         backgroundColor: this.styles.handleBackgroundColor,
-        border: this.styles.border
+        border: this.styles.handleBorder
       }).el;
       const volumeValue = this.domService.manipulate(this.domService.createSpan()).setId("bk_volume").setClass("bk_volume_value").setStyles({
         position: "absolute",
         right: "8px",
+        border: this.styles.volumeBorder,
         borderRadius: "2px",
-        background: "rgba(12, 12, 12, 0.72)",
-        color: "#f0f0f0",
-        padding: "2px 4px",
+        background: this.styles.volumeBackgroundColor,
+        color: this.styles.colour,
+        padding: "1px 4px",
         fontSize: "10px",
         bottom: "0"
       }).el;
@@ -586,15 +604,19 @@
     }
     captureBandcampStyles() {
       const backgroundElementStyles = this.domService.getStyles(
-        this.domService.captureElement("#nonartarea")
+        this.domService.captureElement("#timeline .progbar_empty")
       );
       const handleElementStyles = this.domService.getStyles(
-        this.domService.captureElement(".inline_player .thumb")
+        this.domService.captureElement("#progbar_thumb")
       );
       return {
+        colour: "#f0f0f0",
+        handleBackgroundColor: handleElementStyles.backgroundColor,
+        handleBorder: "1px solid " + handleElementStyles.borderColor,
         progBarBackgroundColor: backgroundElementStyles.backgroundColor,
-        border: handleElementStyles.borderTopWidth + " solid " + handleElementStyles.borderTopColor,
-        handleBackgroundColor: handleElementStyles.backgroundColor
+        progBarBorder: "1px solid " + backgroundElementStyles.borderColor,
+        volumeBackgroundColor: "rgba(12, 12, 12, 0.72)",
+        volumeBorder: "1px solid rgba(12, 12, 12, 0.3)"
       };
     }
     generateMarkup() {
@@ -614,27 +636,28 @@
       const progressBar = this.domService.manipulate(this.domService.createDiv()).setClass("bk_progress_bar").setStyles({ width: "72%" }).el;
       const progressBarBackground = this.domService.manipulate(this.domService.createDiv()).setId("bk_progress_bg").setClass("bk_progress_bar_background").setStyles({
         position: "relative",
-        height: "6px",
+        height: "8px",
         backgroundColor: this.styles.progBarBackgroundColor,
-        border: this.styles.border
+        border: this.styles.progBarBorder
       }).el;
       const handle = this.domService.manipulate(this.domService.createDiv()).setId("bk_handle").setClass("bk_handle").setStyles({
         position: "relative",
-        height: "12px",
-        width: "24px",
-        top: "-4px",
-        borderRadius: "12px",
+        height: "10px",
+        width: "20px",
+        top: "-2px",
+        borderRadius: "1px",
         cursor: "pointer",
         backgroundColor: this.styles.handleBackgroundColor,
-        border: this.styles.border
+        border: this.styles.handleBorder
       }).el;
       const volumeValue = this.domService.manipulate(this.domService.createSpan()).setId("bk_volume").setClass("bk_volume_value").setStyles({
         position: "absolute",
         right: "8px",
+        background: this.styles.volumeBackgroundColor,
+        border: this.styles.volumeBorder,
         borderRadius: "2px",
-        background: "rgba(12, 12, 12, 0.72)",
-        color: "#f0f0f0",
-        padding: "2px 4px",
+        color: this.styles.colour,
+        padding: "1px 4px",
         fontSize: "10px",
         bottom: "0"
       }).el;
