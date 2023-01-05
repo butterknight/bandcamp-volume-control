@@ -13,16 +13,23 @@ export class MarkupControlPage extends AbstractMarkupControl {
 
   protected captureBandcampStyles(): IBandcampStyles {
     const backgroundElementStyles: CSSStyleDeclaration = this.domService.getStyles(
-      this.domService.captureElement('#pgBd')!,
+      this.domService.captureElement('.inline_player .progbar_empty')!,
     );
     const handleElementStyles: CSSStyleDeclaration = this.domService.getStyles(
       this.domService.captureElement('.inline_player .thumb')!,
     );
+    const textStyles: CSSStyleDeclaration = this.domService.getStyles(
+      this.domService.captureElement('.inline_player .title')!,
+    );
 
     return {
-      progBarBackgroundColor: backgroundElementStyles.backgroundColor,
-      border: handleElementStyles.borderTopWidth + ' solid ' + handleElementStyles.borderTopColor,
+      colour: textStyles.color,
       handleBackgroundColor: handleElementStyles.backgroundColor,
+      handleBorder: '1px solid ' + handleElementStyles.borderTopColor,
+      progBarBackgroundColor: backgroundElementStyles.backgroundColor,
+      progBarBorder: '1px solid ' + backgroundElementStyles.borderTopColor,
+      volumeBackgroundColor: backgroundElementStyles.backgroundColor,
+      volumeBorder: '1px solid ' + handleElementStyles.borderTopColor,
     };
   }
 
@@ -52,7 +59,7 @@ export class MarkupControlPage extends AbstractMarkupControl {
         position: 'relative',
         height: '6px',
         backgroundColor: this.styles.progBarBackgroundColor,
-        border: this.styles.border,
+        border: this.styles.progBarBorder,
       }).el!;
 
     const handle: HTMLDivElement = this.domService
@@ -61,13 +68,13 @@ export class MarkupControlPage extends AbstractMarkupControl {
       .setClass('bk_handle')
       .setStyles({
         position: 'relative',
-        height: '12px',
-        width: '24px',
-        top: '-4px',
-        borderRadius: '12px',
+        height: '8px',
+        width: '18px',
+        top: '-2px',
+        borderRadius: '1px',
         cursor: 'pointer',
         backgroundColor: this.styles.handleBackgroundColor,
-        border: this.styles.border,
+        border: this.styles.handleBorder,
       }).el!;
 
     const volumeValue: HTMLSpanElement = this.domService
@@ -77,10 +84,11 @@ export class MarkupControlPage extends AbstractMarkupControl {
       .setStyles({
         position: 'absolute',
         right: '8px',
+        border: this.styles.volumeBorder,
         borderRadius: '2px',
-        background: 'rgba(12, 12, 12, 0.72)',
-        color: '#f0f0f0',
-        padding: '2px 4px',
+        background: this.styles.volumeBackgroundColor,
+        color: this.styles.colour,
+        padding: '1px 4px',
         fontSize: '10px',
         bottom: '0',
       }).el!;

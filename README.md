@@ -39,6 +39,10 @@ You can use [this form](https://github.com/butterknight/bandcamp-volume-control/
 
 ## Changelog
 
+#### v1.0.2 _(Jan 5, 2023)_
+
+- fix a colour styling issue [#4](https://github.com/butterknight/bandcamp-volume-control/issues/4)
+
 #### v1.0.1 _(Jan 3, 2023)_
 
 - fix an utterly dreadful issue where the extension wouldn't load
@@ -58,6 +62,8 @@ You will need to have `node.js` installed.
 Install the dependencies by running `npm ci`.
 
 Build the compiled file by running `npm run build`. The compiled code will be created in the `dist` folder.
+
+If you have [`watchexec`](https://github.com/watchexec/watchexec) installed, you can use `npm run watch` when working so it automatically rebuilds on code changes.
 
 ## License
 
