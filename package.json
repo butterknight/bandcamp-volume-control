@@ -5,6 +5,7 @@
   "main": "src/index.js",
   "scripts": {
     "build": "esbuild src/index.ts --bundle --sourcemap --target=es2015 --outfile=dist/content.js",
+    "watch": "watchexec -f 'src/**' -- npm run build",
     "package": "npm run build && cd dist && web-ext build",
     "prebuild": "rm -rf dist",
     "postbuild": "cp -a meta/* dist",

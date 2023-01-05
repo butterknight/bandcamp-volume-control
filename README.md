@@ -59,6 +59,8 @@ Install the dependencies by running `npm ci`.
 
 Build the compiled file by running `npm run build`. The compiled code will be created in the `dist` folder.
 
+If you have [`watchexec`](https://github.com/watchexec/watchexec) installed, you can use `npm run watch` when working so it automatically rebuilds on code changes.
+
 ## License
 
 Copyright 2017, 2023
