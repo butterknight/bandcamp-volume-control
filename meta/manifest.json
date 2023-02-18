@@ -12,7 +12,9 @@
         "https://*.bandcamp.com/*",
         "https://music.monstercat.com/*",
         "https://shop.attackthemusic.com/*",
-        "https://listen.20buckspin.com/*"
+        "https://listen.20buckspin.com/*",
+        "https://halleylabs.com/*",
+        "https://music.dynatronsynth.com/*"
       ],
       "js": ["content.js"],
       "all_frames": true
