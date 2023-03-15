@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "Volume Control for Bandcamp Player",
   "description": "It's a volume control for Bandcamp audio player. The extension adds another slider (somewhere around the one that controls the track progress) to control the volume.",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "icons": {
     "128": "icon.png"
   },
@@ -12,7 +12,9 @@
         "https://*.bandcamp.com/*",
         "https://music.monstercat.com/*",
         "https://shop.attackthemusic.com/*",
-        "https://listen.20buckspin.com/*"
+        "https://listen.20buckspin.com/*",
+        "https://halleylabs.com/*",
+        "https://music.dynatronsynth.com/*"
       ],
       "js": ["content.js"],
       "all_frames": true
