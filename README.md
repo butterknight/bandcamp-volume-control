@@ -34,10 +34,18 @@ Aside from the Bandcamp domain, a number of additional custom domains is support
 - https://music.monstercat.com/*
 - https://shop.attackthemusic.com/*
 - https://listen.20buckspin.com/*
+- https://halleylabs.com/*
+- https://music.dynatronsynth.com/*
 
 You can use [this form](https://github.com/butterknight/bandcamp-volume-control/issues/new?assignees=butterknight&labels=custom-domain-request&template=custom_domain_request.yml&title=%5BCustomDomain%5D%3A+) if you wish to suggest new ones to be added.
 
 ## Changelog
+
+#### v1.0.3 _(Mar 15, 2023)_
+
+- add two new custom domains (thanks [xnaas](https://github.com/xnaas)): 
+  - https://halleylabs.com
+  - https://music.dynatronsynth.com
 
 #### v1.0.2 _(Jan 5, 2023)_
 
@@ -54,6 +62,13 @@ You can use [this form](https://github.com/butterknight/bandcamp-volume-control/
 #### v2.3.0 _(Feb 10, 2017)_
 
 - initial version of the extension
+
+## Support
+
+If you like the extension you can &nbsp; <a href="https://www.buymeacoffee.com/butterknight" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 30px !important;width: 109px !important;" ></a>
+
+Or you can join the fun and help out!
+
 
 ## Development
 
